@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  docker-python:
+    build:
+      context: .
+    ports:
+      - 3000:5000
+    volumes:
+      - sqliteVolume:/data
+      - ./:/app/
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  sqliteVolume:
+  app: 
